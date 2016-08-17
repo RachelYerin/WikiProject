@@ -29,10 +29,10 @@ function loginProcess(){
 
 </head>
 <body>
-	<form action="login.do">
+	<!-- <form action="login.do">
 		<table>
 			<tr>
-				<td width="150px" align="center">ID :</td>
+				<td width="150px" align="center">EMAIL :</td>
 				<td width="150px" align="center">
 					<input type="text" name="email">
 				</td>
@@ -50,12 +50,12 @@ function loginProcess(){
 			</tr>
 		</table>
 	
-	</form>
+	</form> -->
 
-<!-- <div class="login-form">
+<div class="login-form">
 	<section>
 		<div id="login_demo">
-			hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4 
+			<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4 -->
 
 			<a class="hiddenanchor" id="toregister"></a> 
 			<a class="hiddenanchor"	id="tologin"></a>
@@ -76,8 +76,8 @@ function loginProcess(){
 								placeholder="eg. X8df!90EO" />
 						</p>
 						<p class="login button">
-							input class="submit" type="submit" value="Login" /
-							<input class="submit" type="submit" onclick="javascript:loginProcess" />
+							<!-- <input class="submit" type="submit" value="Login" onclick="javascript:loginProcess" /> -->
+							<input class="submit" type="submit" value="Login" />
 						</p>
 						<p class="change_link">
 							Not a member yet ? <a href="#toregister" class="to_register">Join us</a>
@@ -128,6 +128,6 @@ function loginProcess(){
 		</div>
 	</section>
 </div>
- -->
+
 </body>
 </html>
