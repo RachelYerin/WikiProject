@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.team2.database.MemberInfoObject;
-import com.team2.service.MemberDAOService;
+import com.team2.implement.MemberServiceImpl;
 
 @Controller
 public class LoginController {
@@ -24,7 +24,7 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@Autowired
-	private MemberDAOService service;
+	private MemberServiceImpl service;
 	private MemberInfoObject memberObject = null;
 	
 	@RequestMapping("loginForm.do")

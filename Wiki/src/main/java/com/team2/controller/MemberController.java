@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.team2.database.MemberInfoObject;
-import com.team2.service.MemberDAOService;
+import com.team2.implement.MemberServiceImpl;
 
 @Controller
 public class MemberController {
 	
 	@Autowired
-    private MemberDAOService memberDAOService;
+    private MemberServiceImpl memberDAOService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
