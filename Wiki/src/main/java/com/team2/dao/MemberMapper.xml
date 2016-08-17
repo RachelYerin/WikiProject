@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team2.dao.MemberMapper">
+	<resultMap type="com.team2.database.MemberInfoObject" id="MemberResultMap">
+        <result property="userid" column="USERID"/>
+        <result property="username" column="USERNAME"/>
+        <result property="pw" column="PW"/>
+        <result property="email" column="EMAIL"/>
+    </resultMap>
+ 
+    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
+    <select id="getMembers" resultMap="MemberResultMap">
+        SELECT * FROM user_info
+    </select>
+
+    <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  -->
+    <insert id="insertMember" parameterType="com.team2.database.MemberInfoObject" >
+        INSERT INTO user_info VALUES(#{userid},#{username},#{pw},#{email})
+    </insert>
+    
+    <!-- update와 delete는 생략한다. -->
+    <update id="updateMember" parameterType="com.team2.database.MemberInfoObject" ></update>
+    <delete id="deleteMember" parameterType="com.team2.database.MemberInfoObject" >
+        DELETE user_info WHERE(username=#{username})
+    </delete>
+    
+    <select id="loginMember" parameterType="hashmap" resultMap="MemberResultMap">
+    	select * from user_info
+		where email = #{email} and pw = #{pw}
+    </select>
+</mapper>
