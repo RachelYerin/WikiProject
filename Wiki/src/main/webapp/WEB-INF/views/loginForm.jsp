@@ -65,13 +65,13 @@ function loginProcess(){
 					<form name="login_form" method="post" action="login.do">
 						<h1>Log in</h1>
 						<p>
-							<label for="username" class="uname" data-icon="u"> Your
-								email </label> <input id="useremail" maxlength="30" size="30" name="email"
+							<label for="username" class="uname" data-icon="u"> 
+								Email </label> <input id="useremail" maxlength="30" size="30" name="email"
 								required="required" type="email" placeholder="mymail@mail.com" />
 						</p>
 						<p>
 							<label for="password" class="youpasswd" data-icon="p">
-								Your password </label> <input id="password" maxlength="30" size="20"
+								Password </label> <input id="password" maxlength="30" size="20"
 								name="pw" required="required" type="password"
 								placeholder="eg. X8df!90EO" />
 						</p>
