@@ -70,5 +70,19 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("this issssssssssssssssss spartaaaaaaaaaaaa");
 		return member;
 	}
+	
+	//중복확인- 이메일로 사용자 중복확인(연희)
+   @Override
+   public ArrayList<MemberInfoObject> searchMemberByEmail(String email) {
+      
+
+      ArrayList<MemberInfoObject> result = new ArrayList<MemberInfoObject>();
+
+        MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class);
+
+        result = memberMapper.searchMemberByEmail(email);
+
+        return result;
+   }
 
 }

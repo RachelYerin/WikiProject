@@ -22,7 +22,7 @@ function sendForm(pagenum){
 	if(pagenum == 1){
 		document.loginForm.action = "loginForm.do";	
 	}else{
-		document.loginForm.action = "memberView.do";
+		document.loginForm.action = "joinForm.do";
 	}
 	document.loginForm.submit();
 }

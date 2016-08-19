@@ -12,4 +12,5 @@ public interface MemberMapper {
 	void deleteMember(String name);
 	
 	MemberInfoObject loginMember(HashMap<String, String> map);
+	ArrayList<MemberInfoObject> searchMemberByEmail(String email);
 }
