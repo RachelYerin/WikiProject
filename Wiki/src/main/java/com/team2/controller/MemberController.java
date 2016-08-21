@@ -19,7 +19,7 @@ import com.team2.implement.MemberServiceImpl;
 public class MemberController {
 	
 	@Autowired
-    private MemberServiceImpl memberDAOService;
+    private MemberServiceImpl service;
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
@@ -34,7 +34,7 @@ public class MemberController {
 
 		System.out.println("ok**************************************************");
 		
-		List<MemberInfoObject> memberList = memberDAOService.getMembers();
+		List<MemberInfoObject> memberList = service.getMembers();
 		
 
 		System.out.println("list size : " + memberList.size());
@@ -54,11 +54,11 @@ public class MemberController {
 		member.setPw((String) request.getParameter("pw"));
 		member.setEmail((String) request.getParameter("email"));
 		
-		memberDAOService.insertMember(member);
+		service.insertMember(member);
 		System.out.println("Insert is success");
 		
 		ModelAndView mav = new ModelAndView();
-		List<MemberInfoObject> memberList = memberDAOService.getMembers();
+		List<MemberInfoObject> memberList = service.getMembers();
 		mav.addObject("result", memberList);		
 		
 		return mav;

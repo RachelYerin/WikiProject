@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.team2.dao.ContentMapper">
+	<resultMap type="com.team2.database.ContentInfoObject" id="ContentResultMap">
+        <result property="idx" column="IDX"/>
+        <result property="title" column="TITLE"/>
+        <result property="desc" column="DESC"/>
+        <result property="filename" column="FILENAME"/>
+        <result property="del_yn" column="DEL_YN"/>
+        <result property="reg_date" column="REG_DATE"/>
+        <result property="upd_date" column="UPD_DATE"/>
+        <result property="reg_email" column="REG_EMAIL"/>
+    </resultMap>
+ 
+    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
+    <select id="getBoardList" resultMap="ContentResultMap">
+        SELECT * FROM CONTENTS_INFO
+    </select>
+
+    <!-- Contents Info 테이블에 추가  -->
+    <insert id="insertContent" parameterType="com.team2.database.ContentInfoObject" >
+        INSERT INTO CONTENTS_INFO VALUES(test_seq.nextval,
+        								#{title, jdbcType=VARCHAR},
+        								#{desc, jdbcType=VARCHAR},
+        								#{filename, jdbcType=VARCHAR},
+        								#{del_yn, jdbcType=VARCHAR},
+        								#{reg_date, jdbcType=VARCHAR},
+        								#{upd_date, jdbcType=VARCHAR},
+        								#{reg_email, jdbcType=VARCHAR})
+    </insert>
+    
+    <!-- update와 delete는 생략한다. -->
+    <update id="updateContent" parameterType="com.team2.database.ContentInfoObject" ></update>
+    <delete id="deleteContent" parameterType="com.team2.database.ContentInfoObject" >
+        DELETE CONTENTS_INFO WHERE(idx = #{idx})
+    </delete>
+    
+    <select id="searchContentByIdx" parameterType="com.team2.database.ContentInfoObject" resultMap="ContentResultMap">
+       SELECT * FROM CONTENTS_INFO WHERE (idx = #{idx})
+    </select>
+    
+    
+</mapper>

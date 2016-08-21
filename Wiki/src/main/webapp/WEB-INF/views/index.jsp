@@ -1,5 +1,6 @@
 <%@ page import="com.team2.database.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </script>
 
 <html>
@@ -17,13 +18,17 @@
 <link href='resources/css/design.css' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
 
+
 <script type="text/javascript">
 function sendForm(pagenum){
 	if(pagenum == 1){
 		document.loginForm.action = "loginForm.do";	
-	}else{
+	}else if(pagenum == 2){
 		document.loginForm.action = "joinForm.do";
+	}else{
+		document.loginForm.action = "viewContents.do";
 	}
+	
 	document.loginForm.submit();
 }
 </script>
@@ -31,16 +36,19 @@ function sendForm(pagenum){
 	<title>Team 2 : Wiki Project</title>
 </head>
 <body id="body">
-<form name="loginForm" action="loginForm.do">
+<form name="loginForm" >
 	<div>
 		<header>
 			<h1> Wiki Project </h1>
-			
 			<div align="right">
 				<input type="button" value="Login" onclick="javascript:sendForm(1)"/>
 				<input type="button" value="Join" onclick="javascript:sendForm(2)"/>
 			</div>
 		</header>
+		
+		<div>
+			<input type="button" value="ListView" onclick="javascript:sendForm(3)">
+		</div>
 	</div>
 </form>
 
