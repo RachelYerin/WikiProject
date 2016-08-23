@@ -19,7 +19,7 @@
 
     <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  --><!-- 회원가입 회원추가 기능 -->
     <insert id="insertMember" parameterType="com.team2.database.MemberInfoObject" >
-        INSERT INTO user_info VALUES(test_seq.nextval,#{username, jdbcType=VARCHAR},#{pw, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR})
+        INSERT INTO user_info VALUES(user_cnt_seq.nextval,#{username, jdbcType=VARCHAR},#{pw, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR})
     </insert>
     <!-- sequence 추가 -->
     

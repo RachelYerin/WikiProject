@@ -28,9 +28,8 @@
                 </tr>
             </tbody>
         </table>  
-		<input class="submit" type="submit" value="Write!" />
-        <a href="#this" class="btn" id="write" >Write</a>
-        <a href="#this" class="btn" id="list" >List</a>
+		<input class="submit" type="submit" value="Write" />
+        <a href="/wiki/viewContents.do" class="btn" id="list" >List</a>
        	
        	<!-- <input type="button" value="작성하기" onclick="sendForm(1)"/> -->
     </form>

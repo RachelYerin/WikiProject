@@ -25,14 +25,14 @@
     <insert id="insertContent" parameterType="hashmap" >
         INSERT INTO CONTENTS_INFO 
         	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL)
-        VALUES('C_'||test_seq.nextval,
-        	   #{title, jdbcType=VARCHAR},
-        	   #{desc, jdbcType=VARCHAR},
-        	   'wiki/file/src/'||'F_'||test_seq.nextval,
+        VALUES('C_'||content_cnt_seq.nextval,
+        	   #{title},
+        	   #{desc},
+        	   'wiki/file/src/'||'F_'||content_cnt_seq.nextval,
         	   'N',
         	   SYSDATE,
         	   SYSDATE,
-        	   #{reg_email, jdbcType=VARCHAR})
+        	   #{reg_email})
     </insert>
     
     <!-- update와 delete는 생략한다. -->

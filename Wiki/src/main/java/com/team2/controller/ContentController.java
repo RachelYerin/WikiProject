@@ -63,7 +63,7 @@ public class ContentController {
 		String useremail = (String) session.getAttribute("userEmail");
 		
 		service.registerContent(title, desc, useremail);
-		ModelAndView mav = new ModelAndView("viewContents.do");
+		ModelAndView mav = new ModelAndView("redirect:/viewContents.do");
 		
 		return mav;
 	}
