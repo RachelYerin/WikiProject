@@ -1,5 +1,5 @@
 package com.team2.controller;
-//git ???
+
 import java.util.List;
 import java.util.Map;
 
@@ -29,8 +29,6 @@ public class ContentController {
 		return "boardList";
 	}
 	
-	
-	
 	@RequestMapping("viewContents.do")
 	public ModelAndView viewContents( Map<String, Object> map ) throws Exception{
 		logger.info("viewContents()");
@@ -44,6 +42,13 @@ public class ContentController {
 		return mav;
 	}
 	
-	
+	@RequestMapping("openContentWrite.do")
+	public ModelAndView openContentWrite() throws Exception{
+		logger.info("openContentWrite()");
+		
+		ModelAndView mav = new ModelAndView("ContentWrite");
+		
+		return mav;
+	}
 	
 }

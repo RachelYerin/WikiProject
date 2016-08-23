@@ -25,10 +25,11 @@ function sendForm(pagenum){
 		document.loginForm.action = "loginForm.do";	
 	}else if(pagenum == 2){
 		document.loginForm.action = "joinForm.do";
-	}else{
+	}else if(pagenum == 3){
 		document.loginForm.action = "viewContents.do";
-	}
-	
+	}else if(pagenum == 4){
+		document.loginForm.action = "openContentWrite.do";
+	}else {}
 	document.loginForm.submit();
 }
 </script>
@@ -48,6 +49,7 @@ function sendForm(pagenum){
 		
 		<div>
 			<input type="button" value="ListView" onclick="javascript:sendForm(3)">
+			<input type="button" value="ContentWrite" onclick="javascript:sendForm(4)">
 		</div>
 	</div>
 </form>
