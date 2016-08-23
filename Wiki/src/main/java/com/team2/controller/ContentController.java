@@ -61,15 +61,34 @@ public class ContentController {
 		return mav;
 	}
 	
+	@RequestMapping("openContentDetail.do")
+	public ModelAndView ModelAndView(HttpSession session, String idx) throws Exception{
+		logger.info("registerContent()");
+		
+		System.out.println(idx+"***************************");
+		String useremail = (String) session.getAttribute("userEmail");
+		content = service.searchContentByIdx(idx);
+		
+		ModelAndView mav = new ModelAndView("contentsDetail");
+		mav.addObject("content", content);
+		
+		return mav;
+	}
+	
 	@RequestMapping("deleteContent.do")
 	public ModelAndView deleteContent(HttpSession session, String idx) throws Exception{
 		logger.info("deleteContent()");
-
-		String useremail = (String) session.getAttribute("userEmail");
 		
-		//service.
+		System.out.println(idx+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		String userEmail = (String) session.getAttribute("userEmail");
+		
+		System.out.println(userEmail+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		
+		service.deleteContent(idx, userEmail);
 		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
 		
 		return mav;
 	}
+	
+	
 }

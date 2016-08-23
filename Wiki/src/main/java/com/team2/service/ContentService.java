@@ -9,11 +9,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 //import com.team2.database.MemberInfoObject;
 
+
 import com.team2.database.ContentInfoObject;
 
 public interface ContentService {
 	public ArrayList<ContentInfoObject> getBoardList() throws Exception;
 	public void registerContent(String title, String desc, String reg_email) throws Exception;
-	public void deleteContent(String idx, String reg_email) throws Exception;
+	public void deleteContent(String idx, String userEmail) throws Exception;
+	public ContentInfoObject searchContentByIdx(String idx);
 }
 

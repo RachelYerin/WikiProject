@@ -8,7 +8,7 @@
 	<resultMap type="com.team2.database.ContentInfoObject" id="ContentResultMap">
         <result property="idx" column="IDX"/>
         <result property="title" column="TITLE"/>
-        <result property="desc" column="DESC"/>
+        <result property="desc" column="CONTENTS"/>
         <result property="filename" column="FILENAME"/>
         <result property="del_yn" column="DEL_YN"/>
         <result property="reg_date" column="REG_DATE"/>
@@ -39,8 +39,9 @@
     
     <!-- update와 delete는 생략한다. -->
     <update id="updateContent" parameterType="com.team2.database.ContentInfoObject" ></update>
+    
     <delete id="deleteContent" parameterType="com.team2.database.ContentInfoObject" >
-        DELETE CONTENTS_INFO WHERE(idx = #{idx}) AND (reg_email = #{reg_email}) AND (is_modifying = 'N')
+        DELETE FROM CONTENTS_INFO WHERE(idx = #{idx}) AND (reg_email = #{reg_email}) AND (is_modifying = 'N')
     </delete>
     
     <select id="searchContentByIdx" parameterType="com.team2.database.ContentInfoObject" resultMap="ContentResultMap">

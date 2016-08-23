@@ -30,7 +30,7 @@
                 <c:forEach items="${list}" var="contents">
                     <tr>
                         <td>${contents.idx }</td>
-                        <td>${contents.title }</td>
+                        <td><a href="openContentDetail.do?idx=${contents.idx}">${contents.title }</a></td>
                         <td>${contents.filename }</td>
                         <td>${contents.reg_email }</td>
                     </tr>
@@ -42,8 +42,14 @@
                 </tr>
             </c:otherwise>
         </c:choose>
-         
     </tbody>
 </table>
+
+<form class="form-horizontal" method="post" action="openContentDetail.do" id="contentDetail" >
+	<input type="hidden" name="idx" id="idx" value=""/>
+</form>
+
+<br></br>
+ <a href="/wiki/openContentWrite.do" class="btn" id="write" >Write</a>
 </body>
 </html>

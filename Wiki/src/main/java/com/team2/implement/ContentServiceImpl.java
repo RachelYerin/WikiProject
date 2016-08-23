@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.team2.dao.ContentMapper;
-import com.team2.dao.MemberMapper;
 import com.team2.database.ContentInfoObject;
-import com.team2.database.MemberInfoObject;
 import com.team2.service.ContentService;
 
 
@@ -39,7 +37,7 @@ public class ContentServiceImpl implements ContentService{
 	@Override
 	public void registerContent(String title, String desc, String reg_email) throws Exception {
 		
-		ContentInfoObject content = new ContentInfoObject();
+		//ContentInfoObject content = new ContentInfoObject();
 		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
 
 		HashMap<String, String> map = new HashMap<String,String>();
@@ -51,14 +49,26 @@ public class ContentServiceImpl implements ContentService{
 	}
 	
 	@Override
-	public void deleteContent(String idx, String reg_email) throws Exception {
+	public void deleteContent(String idx, String userEmail) throws Exception {
 		
-		//ContentInfoObject content = new ContentInfoObject();
-		//content.setIdx(idx);
-		//content.setReg_email(reg_email);
+		ContentInfoObject content = new ContentInfoObject();
+		content.setIdx(idx);
+		content.setReg_email(userEmail);
+		
+		
 		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		contentMapper.deleteContent(content);
 		
-		contentMapper.deleteContent(idx, reg_email);
+	}
+
+
+	@Override
+	public ContentInfoObject searchContentByIdx(String idx) {
 		
+		ContentInfoObject content = new ContentInfoObject();
+		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		content = contentMapper.searchContentByIdx(idx);
+		
+		return content;
 	}
 }
