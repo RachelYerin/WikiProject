@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<jsp:include page="header.jsp" flush="true"/>
     <form id="WriteForm" name="writeform" method="post" action="registerContent.do" >
         <table class="board_view">
             <colgroup>

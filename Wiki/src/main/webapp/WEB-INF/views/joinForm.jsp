@@ -20,6 +20,7 @@
    </script>
 </head>
 <body>
+<jsp:include page="header.jsp" flush="true"/>
 <form name="joinform" method="post" action="join.do" >
    <h1>Sign up</h1>
       <p>
