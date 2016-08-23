@@ -26,7 +26,7 @@
 		}else if(pagenum == 2){
 			document.loginForm.action = "joinForm.do";
 		}else if(pagenum == 3){
-			document.loginForm.action = "viewContents.do";
+			document.loginForm.action = "contentsListView.do";
 		}else if(pagenum == 4){
 			document.loginForm.action = "openContentWrite.do";
 		}else{
