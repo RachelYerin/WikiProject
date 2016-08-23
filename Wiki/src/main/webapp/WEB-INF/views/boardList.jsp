@@ -7,6 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
+<jsp:include page="header.jsp" flush="true"/>
 <h2>게시판 목록</h2>
 <table style="border:1px solid #ccc">
     <colgroup>

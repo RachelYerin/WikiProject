@@ -31,7 +31,7 @@ public class JoinController {
    private MemberInfoObject memberObject;
    
    @Autowired
-    private MemberServiceImpl service;
+   private MemberServiceImpl service;
    
    @RequestMapping("joinForm.do")
    public String joinForm(){
@@ -40,7 +40,7 @@ public class JoinController {
       return "joinForm";
    }
 
-   @RequestMapping("check_name.do")
+   @RequestMapping("check_email.do")
    public ModelAndView check_result(HttpServletRequest request,HttpServletResponse response, String email) {
       logger.info("this is duple check");
       

@@ -7,6 +7,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
+<jsp:include page="header.jsp" flush="true"/>
     <table class="board_view">
         <colgroup>
             <col width="15%"/>

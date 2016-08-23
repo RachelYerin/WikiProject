@@ -31,6 +31,7 @@ function loginProcess(){
 
 </head>
 <body>
+<jsp:include page="header.jsp" flush="true"/>
 	<!-- <form action="login.do">
 		<table>
 			<tr>
