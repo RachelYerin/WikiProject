@@ -17,6 +17,13 @@ public class FileController {
 	private FileServiceImpl service;
 	
 	
+	@RequestMapping("fileuploadview.do")
+	public String fileuploadview(){
+		logger.info("fileupload()");
+		
+		return "writetest";
+	}
+	
 	@RequestMapping("fileupload.do")
 	public String fileupload(){
 		logger.info("fileupload()");
