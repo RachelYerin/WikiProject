@@ -1,7 +1,10 @@
 package com.team2.controller;
-//git
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.team2.dao.ContentMapper;
+import com.team2.dao.MemberMapper;
 import com.team2.database.ContentInfoObject;
 import com.team2.implement.ContentServiceImpl;
 
@@ -20,7 +25,7 @@ public class ContentController {
 	
 	@Autowired
 	private ContentServiceImpl service;
-	
+	private ContentInfoObject content = null;	
 	
 	@RequestMapping("boardListView.do")
 	public String boardListView(){
@@ -51,4 +56,15 @@ public class ContentController {
 		return mav;
 	}
 	
+	@RequestMapping("registerContent.do")
+	public ModelAndView registerContent(HttpSession session, String title, String desc) throws Exception{
+		logger.info("registerContent()");
+		
+		String useremail = (String) session.getAttribute("userEmail");
+		
+		service.registerContent(title, desc, useremail);
+		ModelAndView mav = new ModelAndView("viewContents.do");
+		
+		return mav;
+	}
 }

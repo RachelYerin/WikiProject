@@ -11,9 +11,10 @@ public class ContentInfoObject {
 	private String upd_date;
 	private String reg_email;
 	
-	public ContentInfoObject() {
-		
-	}
+	public ContentInfoObject() {}
+	public ContentInfoObject(String title, String desc){};
+	public ContentInfoObject(String title, String desc, String filename){};
+	
 	
 	public String getIdx()	{
 		return idx;

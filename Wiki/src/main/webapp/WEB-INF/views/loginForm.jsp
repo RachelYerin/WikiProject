@@ -20,12 +20,14 @@
 <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function loginProcess(){
+	
+	alert('test');
 	document.login_form.action = "login.do";
 	document.login_form.submit();
 }
-</script>
+</script> -->
 
 </head>
 <body>

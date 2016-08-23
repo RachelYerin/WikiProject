@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 import com.team2.database.ContentInfoObject;
 
 public interface ContentService {
-
-	ArrayList<ContentInfoObject> getBoardList() throws Exception;
-
+	public ArrayList<ContentInfoObject> getBoardList() throws Exception;
+	public void registerContent(String title, String desc, String reg_email) throws Exception;
 }
 

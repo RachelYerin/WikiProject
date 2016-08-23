@@ -59,15 +59,12 @@ public class MemberServiceImpl implements MemberService{
 
 		MemberInfoObject member = null;		
 		MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class); //여기서 멈춤
-
-		System.out.println("this issssssssssssssssss spartaaaaaaaaaaaa");
 		
 		HashMap<String, String> map = new HashMap<String,String>();
 		map.put("email",email);
 		map.put("pw",pw);
 		member = memberMapper.loginMember(map);
 
-		System.out.println("this issssssssssssssssss spartaaaaaaaaaaaa");
 		return member;
 	}
 	

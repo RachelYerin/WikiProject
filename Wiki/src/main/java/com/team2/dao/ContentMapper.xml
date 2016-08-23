@@ -22,15 +22,17 @@
     </select>
 
     <!-- Contents Info 테이블에 추가  -->
-    <insert id="insertContent" parameterType="com.team2.database.ContentInfoObject" >
-        INSERT INTO CONTENTS_INFO VALUES(test_seq.nextval,
-        								#{title, jdbcType=VARCHAR},
-        								#{desc, jdbcType=VARCHAR},
-        								#{filename, jdbcType=VARCHAR},
-        								#{del_yn, jdbcType=VARCHAR},
-        								#{reg_date, jdbcType=VARCHAR},
-        								#{upd_date, jdbcType=VARCHAR},
-        								#{reg_email, jdbcType=VARCHAR})
+    <insert id="insertContent" parameterType="hashmap" >
+        INSERT INTO CONTENTS_INFO 
+        	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL)
+        VALUES('C_'||test_seq.nextval,
+        	   #{title, jdbcType=VARCHAR},
+        	   #{desc, jdbcType=VARCHAR},
+        	   'wiki/file/src/'||'F_'||test_seq.nextval,
+        	   'N',
+        	   SYSDATE,
+        	   SYSDATE,
+        	   #{reg_email, jdbcType=VARCHAR})
     </insert>
     
     <!-- update와 delete는 생략한다. -->

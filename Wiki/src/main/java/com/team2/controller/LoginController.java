@@ -42,16 +42,11 @@ public class LoginController {
 		memberObject = service.login(email, pw);
 		
 		if( memberObject != null ){
-
-			System.out.println("ooooooooooo111111111111111121321321111111");
 			session.setAttribute("userEmail", email);
-			mav.setViewName("redirect:main.do");
-			
-			
+			mav.setViewName("redirect:main.do");	
 		}
 		else{
-
-			System.out.println("ood&&&^&^7328743287411111");
+			
 			mav.setViewName("redirect:loginForm.do");
 		}
 		
