@@ -11,7 +11,7 @@ public interface ContentMapper {
 	ArrayList<ContentInfoObject> getBoardList();
 	void insertContent(HashMap<String, String> map);
 	void updateContent(String idx);
-	void deleteContent(String idx);
+	void deleteContent(String idx, String reg_email);
 	
 	ArrayList<ContentInfoObject> searchContentByIdx(String idx);
 }

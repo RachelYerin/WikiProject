@@ -10,11 +10,9 @@ public class ContentInfoObject {
 	private String reg_date;
 	private String upd_date;
 	private String reg_email;
+	private String is_modifying;
 	
 	public ContentInfoObject() {}
-	public ContentInfoObject(String title, String desc){};
-	public ContentInfoObject(String title, String desc, String filename){};
-	
 	
 	public String getIdx()	{
 		return idx;
@@ -78,5 +76,13 @@ public class ContentInfoObject {
 	
 	public void setReg_email(String reg_email){
 		this.reg_email = reg_email;
+	}
+	
+	public String getIs_modifying() {
+		return is_modifying;
+	}
+	
+	public void setIs_modifying(String is_modifying){
+		this.is_modifying = is_modifying;
 	}
 }

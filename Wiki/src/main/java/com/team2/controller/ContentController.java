@@ -27,16 +27,9 @@ public class ContentController {
 	private ContentServiceImpl service;
 	private ContentInfoObject content = null;	
 	
-	@RequestMapping("boardListView.do")
-	public String boardListView(){
-		logger.info("boardListView()");
-		
-		return "boardList";
-	}
-	
-	@RequestMapping("viewContents.do")
-	public ModelAndView viewContents( Map<String, Object> map ) throws Exception{
-		logger.info("viewContents()");
+	@RequestMapping("contentsListView.do")
+	public ModelAndView contentsListView( Map<String, Object> map ) throws Exception{
+		logger.info("contentsListView()");
 		
 		ModelAndView mav = new ModelAndView("boardList");
 		
@@ -63,7 +56,19 @@ public class ContentController {
 		String useremail = (String) session.getAttribute("userEmail");
 		
 		service.registerContent(title, desc, useremail);
-		ModelAndView mav = new ModelAndView("redirect:/viewContents.do");
+		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
+		
+		return mav;
+	}
+	
+	@RequestMapping("deleteContent.do")
+	public ModelAndView deleteContent(HttpSession session, String idx) throws Exception{
+		logger.info("deleteContent()");
+
+		String useremail = (String) session.getAttribute("userEmail");
+		
+		//service.
+		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
 		
 		return mav;
 	}

@@ -14,6 +14,7 @@
         <result property="reg_date" column="REG_DATE"/>
         <result property="upd_date" column="UPD_DATE"/>
         <result property="reg_email" column="REG_EMAIL"/>
+        <result property="is_modifying" column="IS_MODIFYING"/>
     </resultMap>
  
     <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
@@ -24,7 +25,7 @@
     <!-- Contents Info 테이블에 추가  -->
     <insert id="insertContent" parameterType="hashmap" >
         INSERT INTO CONTENTS_INFO 
-        	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL)
+        	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL, IS_MODIFYING)
         VALUES('C_'||content_cnt_seq.nextval,
         	   #{title},
         	   #{desc},
@@ -32,13 +33,14 @@
         	   'N',
         	   SYSDATE,
         	   SYSDATE,
-        	   #{reg_email})
+        	   #{reg_email},
+        	   'N')
     </insert>
     
     <!-- update와 delete는 생략한다. -->
     <update id="updateContent" parameterType="com.team2.database.ContentInfoObject" ></update>
     <delete id="deleteContent" parameterType="com.team2.database.ContentInfoObject" >
-        DELETE CONTENTS_INFO WHERE(idx = #{idx})
+        DELETE CONTENTS_INFO WHERE(idx = #{idx}) AND (reg_email = #{reg_email}) AND (is_modifying = 'N')
     </delete>
     
     <select id="searchContentByIdx" parameterType="com.team2.database.ContentInfoObject" resultMap="ContentResultMap">

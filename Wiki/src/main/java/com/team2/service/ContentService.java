@@ -14,5 +14,6 @@ import com.team2.database.ContentInfoObject;
 public interface ContentService {
 	public ArrayList<ContentInfoObject> getBoardList() throws Exception;
 	public void registerContent(String title, String desc, String reg_email) throws Exception;
+	public void deleteContent(String idx, String reg_email) throws Exception;
 }
 

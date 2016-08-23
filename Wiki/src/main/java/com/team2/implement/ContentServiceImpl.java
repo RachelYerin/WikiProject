@@ -49,4 +49,16 @@ public class ContentServiceImpl implements ContentService{
 		contentMapper.insertContent(map);
 		
 	}
+	
+	@Override
+	public void deleteContent(String idx, String reg_email) throws Exception {
+		
+		//ContentInfoObject content = new ContentInfoObject();
+		//content.setIdx(idx);
+		//content.setReg_email(reg_email);
+		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		
+		contentMapper.deleteContent(idx, reg_email);
+		
+	}
 }
