@@ -6,19 +6,15 @@
 
 <mapper namespace="com.team2.dao.FileMapper">
 	<resultMap type="com.team2.database.FileInfoObject" id="FileResultMap">
-        <result property="idx" column="IDX"/>
-        <result property="board_idx" column="BOARD_IDX"/>
-        <result property="original_filename" column="ORIGINAL_FILE_NAME"/>
-        <result property="stored_filename" column="STORED_FILE_NAME"/>
-        <result property="file_size" column="FILE_SIZE"/>
-        <result property="crea_dtm" column="CREA_DTM"/>
-        <result property="crea_id" column="CREA_ID"/>
-        <result property="del_yn" column="DEL_YN"/>
+        <result property="id" column="ID"/>
+        <result property="c_type" column="C_TYPE"/>
+        <result property="length" column="LENGTH"/>
+        <result property="filename" column="FILENAME"/>
 
     </resultMap>
  
     <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
-    <select id="getTest" resultMap="FileResultMap">
+    <select id="insertfile" resultMap="FileResultMap">
         SELECT * FROM FILE_INFO
     </select>
     
