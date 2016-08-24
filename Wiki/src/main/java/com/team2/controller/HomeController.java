@@ -36,4 +36,18 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping("mytest.do")
+	public String test() {
+		/*logger.info("Welcome home! The client locale is {}.", locale);
+		
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		
+		String formattedDate = dateFormat.format(date);
+		
+		model.addAttribute("serverTime", formattedDate );*/
+		
+		return "detail";
+	}
+	
 }

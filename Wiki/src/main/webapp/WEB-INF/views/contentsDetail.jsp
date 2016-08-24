@@ -7,15 +7,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
-<jsp:include page="header.jsp" flush="true"/>
-    <table class="board_view">
+<jsp:include page="index.jsp" flush="true"/>
+<h1 id="title">게시글 상세</h1> <br></br>
+    <table class="board_view" border="1" width="70%">
         <colgroup>
             <col width="15%"/>
             <col width="35%"/>
             <col width="15%"/>
             <col width="35%"/>
         </colgroup>
-        <caption>게시글 상세</caption> <br></br>
         <tbody>
             <tr>
                 <th scope="row">글 번호</th>
@@ -40,9 +40,12 @@
     </table>
     <br></br><br></br><br></br>
     <div>
-    <a href="/wiki/contentsListView.do" class="btn" id="list">목록으로</a>
-    <a href="modifyContentView.do?idx=${content.idx}" class="btn" id="modify">수정하기</a>
-    <a href="deleteContent.do?idx=${content.idx}" class="btn" id="delete">삭제하기</a>
+    <a href="/wiki/contentsListView.do" class="btn" id="list"><span>&nbsp;&nbsp;&nbsp;List(목록)&nbsp;&nbsp;&nbsp;</span></a>
+    <!-- <a href="/wiki/contentsListView.do" class="btn" id="list">목록으로</a> -->
+    <a href="modifyContentView.do?idx=${content.idx}" class="btn" id="modify"><span>&nbsp;&nbsp;&nbsp;Modify(수정)&nbsp;&nbsp;&nbsp;</span></a>
+    <!-- <a href="modifyContentView.do?idx=${content.idx}" class="btn" id="modify">수정하기</a>-->
+    <a href="deleteContent.do?idx=${content.idx}" class="btn" id="delete"><span>&nbsp;&nbsp;&nbsp;Delete(삭제)&nbsp;&nbsp;&nbsp;</span></a>
+    <!-- <a href="deleteContent.do?idx=${content.idx}" class="btn" id="delete">삭제하기</a> -->
 	</div>
     </body>
 </html>

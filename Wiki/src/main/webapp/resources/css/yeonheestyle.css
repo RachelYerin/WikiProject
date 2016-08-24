@@ -1,0 +1,35 @@
+#mainTitle {
+	text-align: center;
+	font-size: 30pt;
+}
+
+#title {
+	text-align: center;
+	font-size: 30pt;
+}
+
+table {
+	margin: auto;
+	border: 2px black solid;
+	border-collapse: collapse;
+	height: 50%;
+}
+
+table td,th {
+	font-size: 13pt;
+	padding: 10px;
+}
+
+table th {
+	text-align: center;
+}
+
+span {
+	background-color: Black;
+	color: white;
+	font-size: 17pt;
+}
+
+body {
+	margin: auto;
+}
