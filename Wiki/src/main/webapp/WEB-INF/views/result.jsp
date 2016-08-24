@@ -18,27 +18,32 @@
 <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
 <link href='resources/css/design.css' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+<style type="text/css">
+	.failed {
+		color: red;
+		font-style: bold;
+		font-size:18pt;
+	}
+</style>
 
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"/>
- 
-
-<table>
-     <tr>
-         <td width="50px" align="center">id</td>
-         <td align="center">name</td>
-         <td align="center">email</td>
-     </tr>
-     <!-- result는 contoller의 addObject로 부터 가져온다. -->
-
-     <c:forEach items="${result}" var="member">
-         <tr>
-             <td>${member.userid}</td>
-             <td>${member.username}</td>
-             <td>${member.email}</td>    
-         </tr> 
-     </c:forEach>
- </table>
+<c:choose>
+		<c:when test="${imageFile != null }">
+		파일 업로드 완료
+		<ul>
+			<li>파일 ID : ${imageFile.id }</li>
+			<li>저장된 파일 이름 : ${imageFile.fileName }</li>
+			<li>파일 길이 : ${imageFile.contentLength }</li>
+			<li>MIME 타입 : ${imageFile.contentType }</li>
+		</ul>
+		
+		<img src="${pageContext.request.contextPath}/image/${imageFile.id}">
+		</c:when>
+		<c:otherwise>
+		<span class="failed">파일 업로드 실패</span>		
+		</c:otherwise>
+	</c:choose>
  </body>
 </html>

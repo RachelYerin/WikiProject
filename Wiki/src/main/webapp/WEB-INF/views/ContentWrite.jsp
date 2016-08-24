@@ -6,11 +6,23 @@
 <html>
 <head>
 	<title>Team 2 : Wiki Project</title>
+	<script>
+	function send(){
+		var fileyn = document.getElementById('file').value;
+		if(fileyn == null){
+			document.writeform.action = "registerContent.do";
+		}else{
+			document.writeform.action = "fileupload.do";
+		}
+
+	}
+	</script>
 </head>
 
 <body>
 <jsp:include page="header.jsp" flush="true"/>
-    <form id="WriteForm" name="writeform" method="post" action="registerContent.do" >
+    <!-- <form id="writeform" name="writeform" method="post" action="registerContent.do"  enctype="multipart/form-data" >-->
+    <form id="writeform" name="writeform" method="post" enctype="multipart/form-data" >
         <table class="board_view">
             <colgroup>
                 <col width="15%">
@@ -28,8 +40,10 @@
                     </td>
                 </tr>
             </tbody>
-        </table>  
-		<input class="submit" type="submit" value="Write" />
+        </table>
+        <input type="file" name="file" id="file">
+        <br/><br/>  
+		<input type="button" value="Write" onclick="send()"/>
         <a href="/wiki/contentsListView.do" class="btn" id="list" >List</a>
        	
        	<!-- <input type="button" value="작성하기" onclick="sendForm(1)"/> -->

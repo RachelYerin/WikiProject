@@ -2,27 +2,64 @@ package com.team2.database;
 
 public class FileInfoObject {
 
-	private String idx;
-	private String board_idx;
-	private String original_filename;
-	private String stored_filename;
-	private String file_size;
-	private String crea_dtm;
-	private String crea_id;
-	private String del_yn;
+	//private String idx;
+	//private String board_idx;
+	//private String original_filename;
+	//private String stored_filename;
+	//private String file_size;
+	//private String crea_dtm;
+	//private String crea_id;
+	//private String del_yn;
 	
-	public FileInfoObject() {
-		
+	/**
+	 * 업로드한 이미지 파일이 저장될 경로
+	 */
+	public static final String IMAGE_DIR = "/web/upload_images/";
+
+	private String id;
+	private String contentType;
+	private int contentLength;
+	private String fileName;
+	
+	public FileInfoObject(String id, String contentType, int contentLength, String fileName) {
+		this.id = id;
+		this.contentType = contentType;
+		this.contentLength = contentLength;
+		this.fileName = fileName;
 	}
 	
-	public String getIdx()	{
-		return idx;
+	public String getId()	{
+		return id;
 	}
 	
-	public void setIdx(String idx){
-		this.idx = idx;
+	public void setId(String id){
+		this.id = id;
 	}
 	
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
+	public int getContentLength() {
+		return contentLength;
+	}
+
+	public void setContentLength(int contentLength) {
+		this.contentLength = contentLength;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	/*
 	public String getBoardIdx() {
 		return board_idx;
 	}
@@ -77,5 +114,5 @@ public class FileInfoObject {
 	
 	public void setDel_YN(String del_yn){
 		this.del_yn = del_yn;
-	}
+	}*/
 }
