@@ -153,9 +153,9 @@ public class ContentController {
 		logger.info("registerContentAndFile()");
 
 		ModelAndView mav = new ModelAndView();
-		content = service.searchContentsByKeyword(keyword);
-		
-		if (content == null){
+		List<ContentInfoObject> contentList = service.searchContentsByKeyword(keyword);
+
+		if ( keyword.isEmpty() || contentList == null ){
 			String failDesc = "<span>검색 결과가 없습니다.</span><span>클릭하시면 리스트로 이동합니다.</span>";
 			mav.setViewName("failurePage");
 			mav.addObject("FailureType", failDesc);
@@ -163,10 +163,9 @@ public class ContentController {
 			return mav;
 		}
 		
-		String url = "redirect:/openContentDetail.do?idx="+content.getIdx();
-		
-		mav.setViewName(url);
-		mav.addObject("contents", content);
+		mav.addObject("list", contentList);
+		mav.setViewName("boardList");
+
 		return mav;
 	}
 	

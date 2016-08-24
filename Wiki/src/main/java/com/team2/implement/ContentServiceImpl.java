@@ -98,9 +98,9 @@ public class ContentServiceImpl implements ContentService{
 
 
 	@Override
-	public ContentInfoObject searchContentsByKeyword(String keyword) {
+	public ArrayList<ContentInfoObject> searchContentsByKeyword(String keyword) {
 		
-		ContentInfoObject content = new ContentInfoObject();
+		ArrayList<ContentInfoObject> content = new ArrayList<ContentInfoObject>();
 		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
 		content = contentMapper.searchContentByKeyword(keyword);
 		

@@ -14,5 +14,5 @@ public interface ContentMapper {
 	void deleteContent(ContentInfoObject contentObject);      //파라미터로 객체 정보를 넣어 삭제
 	 
 	ContentInfoObject searchContentByIdx(String idx);         //인덱스값으로 게시물을 찾아 리턴
-	ContentInfoObject searchContentByKeyword(String keyword); //키워드값으로 게시물을 찾아 리턴
+	ArrayList<ContentInfoObject> searchContentByKeyword(String keyword); //키워드값으로 게시물을 찾아 리턴
 }

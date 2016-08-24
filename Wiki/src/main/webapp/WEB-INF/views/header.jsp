@@ -30,7 +30,9 @@
 		}else if(pagenum == 4){
 			document.loginForm.action = "openContentWrite.do";
 		}else if(pagenum == 5){
-			document.loginForm.action = "mytest.do";
+			document.loginForm.action = "fileUploadView.do";
+		}else if(pagenum == 8){
+			document.loginForm.action = "logout.do";
 		}else {
 			document.loginForm.action = "searchContents.do";
 		}
@@ -67,7 +69,8 @@
 		</div>
 			<form name="loginForm" >
 				<input class="loginbutton" type="button" value="Login" onclick="javascript:sendForm(1)"/>&nbsp;&nbsp;
-				<input class="loginbutton" type="button" value="Join" onclick="javascript:sendForm(2)"/>
+				<input class="joinbutton" type="button" value="Join" onclick="javascript:sendForm(2)"/>
+				<input class="logoutbutton" type="button" value="Logout" onclick="javascript:sendForm(8)"/>
 			</form>
 </div>
 <hr>
