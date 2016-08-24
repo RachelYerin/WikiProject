@@ -24,6 +24,9 @@
 	<br>
 	<p> 파일 등록 </p>
 	<input type="button" value="Test" onclick="javascript:sendForm(5)">
+	<br>
+	<p> 글 검색 테스트 </p>
+	<input type="button" value="search" onclick="javascript:sendForm(6)">
 </div>
 
 <div id="content">

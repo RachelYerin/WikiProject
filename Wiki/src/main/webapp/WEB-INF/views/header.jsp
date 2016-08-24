@@ -29,8 +29,10 @@
 			document.loginForm.action = "contentsListView.do";
 		}else if(pagenum == 4){
 			document.loginForm.action = "openContentWrite.do";
-		}else{
+		}else if(pagenum == 5){
 			document.loginForm.action = "fileuploadview.do";
+		}else {
+			document.loginForm.action = "search.do";
 		}
 		
 		document.loginForm.submit();

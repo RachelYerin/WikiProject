@@ -70,6 +70,7 @@ public class FileServiceImpl implements FileService{
 	 */
 	public FileInfoObject save(MultipartFile multipartFile) {
 		// UUID로 유일할 것 같은 값 생성.. 낮은 확률로 중복 가능성이 있음
+		System.out.println("122222221");
 		System.out.println(multipartFile);
 		String genId = UUID.randomUUID().toString();
 		FileInfoObject imageFile = null;
