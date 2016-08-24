@@ -58,11 +58,7 @@ public class LoginController {
 	// index가 나오는 메인 페이지 (예린)
 	@RequestMapping("main.do")
 	public String main(Model model, HttpSession session){
-		//String username = (String) session.getAttribute("username");
-        //if(username == null)
-        //    return "redirect:loginForm.do";
-        //else{
-            //login success
+
             return "index";
     }
 
@@ -76,18 +72,3 @@ public class LoginController {
 	}
 }
 
-	/*@RequestMapping("selectItem.do")
-	public ModelAndView selectItem(Model model, HttpSession session){
-		
-		ModelAndView mav = new ModelAndView();
-		
-		String userNM = (String) session.getAttribute("username");
-		
-		if(userNM == null){
-			mav.addObject("isLogin", "false");
-		}
-		
-		return mav;
-	}*/
-	
-	

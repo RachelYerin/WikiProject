@@ -58,5 +58,11 @@
        SELECT * FROM CONTENTS_INFO WHERE (idx = #{idx})
     </select>
     
+    <select id="searchContentByKeyword" parameterType="string" resultMap="ContentResultMap">
+       SELECT * 
+  		 FROM CONTENTS_INFO
+  		WHERE UPPER(TITLE) LIKE '%'||UPPER(#{keyword})||'%'
+    </select>
+    
     
 </mapper>

@@ -34,8 +34,7 @@ public class ContentController {
 		
 		List<ContentInfoObject> contentList = service.getBoardList();
 		mav.addObject("list", contentList);
-		//mav.setViewName("boardList");/////////////////////////////////////////////////test
-		mav.setViewName("boardList_test");
+		mav.setViewName("boardList");
 		
 		return mav;
 	}
@@ -45,8 +44,7 @@ public class ContentController {
 	public ModelAndView openContentWrite() throws Exception{
 		logger.info("openContentWrite()");
 		
-		//ModelAndView mav = new ModelAndView("ContentWrite");
-		ModelAndView mav = new ModelAndView("ContentWrite_test");////////////////////////////////////////test
+		ModelAndView mav = new ModelAndView("ContentWrite");
 		
 		return mav;
 	}
@@ -136,6 +134,19 @@ public class ContentController {
 		//service.modifyAndUpdateContent(title, desc, userEmail);
 		
 		ModelAndView mav = new ModelAndView();
+		return mav;
+	}
+	
+	@RequestMapping("searchContents.do")
+	public ModelAndView searchContents(HttpSession session, String keyword) throws Exception{
+		
+		System.out.println(keyword + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		content = service.searchContentsByKeyword(keyword);
+		
+		String url = "redirect:/openContentDetail.do?idx="+content.getIdx();
+		
+		ModelAndView mav = new ModelAndView(url);
+		mav.addObject("contents", content);
 		return mav;
 	}
 	

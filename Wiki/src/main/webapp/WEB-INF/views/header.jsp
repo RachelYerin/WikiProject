@@ -32,7 +32,7 @@
 		}else if(pagenum == 5){
 			document.loginForm.action = "fileUploadView.do";
 		}else {
-			document.loginForm.action = "search.do";
+			document.loginForm.action = "searchContents.do";
 		}
 		
 		document.loginForm.submit();

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 //import com.team2.database.MemberInfoObject;
 
 
+
 import com.team2.database.ContentInfoObject;
 
 public interface ContentService {
@@ -18,5 +19,6 @@ public interface ContentService {
 	public void deleteContent(String idx, String userEmail) throws Exception;
 	public ContentInfoObject modifyAndUpdateContent(String idx, String title, String desc, String reg_email) throws Exception;
 	public ContentInfoObject searchContentByIdx(String idx);
+	public ContentInfoObject searchContentsByKeyword(String keyword);
 }
 
