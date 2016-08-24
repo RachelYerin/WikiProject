@@ -82,10 +82,20 @@ public class ContentController {
 		logger.info("deleteContent()");
 		
 		String userEmail = (String) session.getAttribute("userEmail");
-		
-		service.deleteContent(idx, userEmail);
 		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
 		
+		content = service.searchContentByIdx(idx);
+		
+		if( !userEmail.equals(content.getReg_email())){
+			String failDesc = "<span>삭제 권한이 없습니다.</span><span>클릭하시면 리스트로 이동합니다.</span>";
+			mav.setViewName("failurePage");
+			mav.addObject("FailureType", failDesc);
+			//mav.setViewName("deleteFailure");
+			return mav;
+		}
+		
+		service.deleteContent(idx, userEmail);
+
 		return mav;
 	}
 	
@@ -137,15 +147,25 @@ public class ContentController {
 		return mav;
 	}
 	
+	// 해당 키워드로 검색, 검색결과 없으면 failure 페이지로 리턴
 	@RequestMapping("searchContents.do")
 	public ModelAndView searchContents(HttpSession session, String keyword) throws Exception{
-		
-		System.out.println(keyword + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		logger.info("registerContentAndFile()");
+
+		ModelAndView mav = new ModelAndView();
 		content = service.searchContentsByKeyword(keyword);
+		
+		if (content == null){
+			String failDesc = "<span>검색 결과가 없습니다.</span><span>클릭하시면 리스트로 이동합니다.</span>";
+			mav.setViewName("failurePage");
+			mav.addObject("FailureType", failDesc);
+			
+			return mav;
+		}
 		
 		String url = "redirect:/openContentDetail.do?idx="+content.getIdx();
 		
-		ModelAndView mav = new ModelAndView(url);
+		mav.setViewName(url);
 		mav.addObject("contents", content);
 		return mav;
 	}

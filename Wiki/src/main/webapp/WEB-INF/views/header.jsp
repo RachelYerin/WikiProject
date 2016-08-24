@@ -37,6 +37,15 @@
 		
 		document.loginForm.submit();
 	}
+	
+	function check() {
+		if (document.searchForm.keyword.value == "") {
+			alert("검색어를 입력하세요.");
+			document.search.keyword.focus();
+			return;
+		}
+		document.searchForm.submit();
+	}
 	</script>
 	<style>
 	.loginbutton {float:right;}

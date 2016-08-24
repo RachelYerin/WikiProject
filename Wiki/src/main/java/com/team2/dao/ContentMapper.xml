@@ -19,7 +19,7 @@
     </resultMap>
  
     <select id="getBoardList" resultMap="ContentResultMap">
-        SELECT * FROM CONTENTS_INFO
+        SELECT * FROM CONTENTS_INFO ORDER BY UPD_DATE DESC
     </select>
 
     <!-- Contents Info 테이블에 추가 (예린)  -->
