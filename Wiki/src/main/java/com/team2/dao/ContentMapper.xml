@@ -26,7 +26,7 @@
     <insert id="insertContent" parameterType="hashmap" >
         INSERT INTO CONTENTS_INFO 
         	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL, IS_MODIFYING)
-        VALUES('C_'||content_cnt_seq.nextval,
+        VALUES(content_cnt_seq.nextval,
         	   #{title},
         	   #{desc},
         	   'wiki/file/src/'||'F_'||content_cnt_seq.nextval,
@@ -38,7 +38,15 @@
     </insert>
     
     <!-- update와 delete는 생략한다. -->
-    <update id="updateContent" parameterType="com.team2.database.ContentInfoObject" ></update>
+    <update id="updateContent" parameterType="hashmap" >
+    	UPDATE CONTENTS_INFO 
+			SET title = #{title}, 
+			    contents = #{desc}, 
+			    upd_date = SYSDATE,
+			    reg_email = #{reg_email},
+			    is_modifying = 'N'
+		  WHERE idx = #{idx}
+    </update>
     
     <delete id="deleteContent" parameterType="com.team2.database.ContentInfoObject" >
         DELETE FROM CONTENTS_INFO WHERE(idx = #{idx}) AND (reg_email = #{reg_email}) AND (is_modifying = 'N')

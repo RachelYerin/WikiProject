@@ -71,4 +71,22 @@ public class ContentServiceImpl implements ContentService{
 		
 		return content;
 	}
+
+
+	@Override
+	public ContentInfoObject modifyAndUpdateContent(String idx, String title, String desc, String reg_email) throws Exception {
+		
+		ContentInfoObject content = new ContentInfoObject();
+		System.out.println("["+idx+"]"+"["+title+"]"+"["+desc+"]"+"["+reg_email+"]");
+		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		HashMap<String, String> map = new HashMap<String,String>();
+		map.put("idx", idx);
+		map.put("title",title);
+		map.put("desc",desc);
+		map.put("reg_email",reg_email);
+		contentMapper.updateContent(map);
+		content = contentMapper.searchContentByIdx(idx);
+		return content;
+	}
+
 }

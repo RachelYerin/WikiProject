@@ -10,7 +10,7 @@ import com.team2.database.MemberInfoObject;
 public interface ContentMapper {
 	ArrayList<ContentInfoObject> getBoardList();
 	void insertContent(HashMap<String, String> map);
-	void updateContent(String idx);
+	void updateContent(HashMap<String, String> map);
 	void deleteContent(ContentInfoObject contentObject);
 	
 	ContentInfoObject searchContentByIdx(String idx);

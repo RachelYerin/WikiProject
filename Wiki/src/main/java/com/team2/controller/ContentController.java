@@ -65,12 +65,11 @@ public class ContentController {
 	public ModelAndView ModelAndView(HttpSession session, String idx) throws Exception{
 		logger.info("registerContent()");
 		
-		System.out.println(idx+"***************************");
 		String useremail = (String) session.getAttribute("userEmail");
 		content = service.searchContentByIdx(idx);
-		
 		ModelAndView mav = new ModelAndView("contentsDetail");
 		mav.addObject("content", content);
+		content = null;
 		
 		return mav;
 	}
@@ -79,10 +78,7 @@ public class ContentController {
 	public ModelAndView deleteContent(HttpSession session, String idx) throws Exception{
 		logger.info("deleteContent()");
 		
-		System.out.println(idx+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		String userEmail = (String) session.getAttribute("userEmail");
-		
-		System.out.println(userEmail+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		
 		service.deleteContent(idx, userEmail);
 		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
@@ -90,5 +86,29 @@ public class ContentController {
 		return mav;
 	}
 	
+	@RequestMapping("modifyContentView.do")
+	public ModelAndView modifyContentView(HttpSession session, String idx) throws Exception{
+		logger.info("modifyContentView()");
+		
+		String userEmail = (String) session.getAttribute("userEmail");
+		content = service.searchContentByIdx(idx);
+
+		ModelAndView mav = new ModelAndView("contentsModify");
+		mav.addObject("content", content);
+		
+		return mav;
+	}
 	
+	@RequestMapping("updateContent.do")
+	public ModelAndView updateContent(HttpSession session, String idx, String title, String desc) throws Exception{
+		logger.info("updateContent()");
+
+		String userEmail = (String) session.getAttribute("userEmail");
+
+		service.modifyAndUpdateContent(idx, title, desc, userEmail);
+		String url = "redirect:/openContentDetail.do?idx="+content.getIdx();
+		System.out.println(url+"##################################");
+		ModelAndView mav = new ModelAndView(url);
+		return mav;
+	}
 }

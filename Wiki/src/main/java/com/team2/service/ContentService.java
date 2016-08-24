@@ -16,6 +16,7 @@ public interface ContentService {
 	public ArrayList<ContentInfoObject> getBoardList() throws Exception;
 	public void registerContent(String title, String desc, String reg_email) throws Exception;
 	public void deleteContent(String idx, String userEmail) throws Exception;
+	public ContentInfoObject modifyAndUpdateContent(String idx, String title, String desc, String reg_email) throws Exception;
 	public ContentInfoObject searchContentByIdx(String idx);
 }
 

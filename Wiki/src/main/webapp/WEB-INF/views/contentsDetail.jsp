@@ -41,6 +41,7 @@
     <br></br><br></br><br></br>
     <div>
     <a href="/wiki/contentsListView.do" class="btn" id="list">목록으로</a>
+    <a href="modifyContentView.do?idx=${content.idx}" class="btn" id="modify">수정하기</a>
     <a href="deleteContent.do?idx=${content.idx}" class="btn" id="delete">삭제하기</a>
 	</div>
     </body>

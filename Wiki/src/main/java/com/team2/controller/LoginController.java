@@ -46,7 +46,7 @@ public class LoginController {
 			mav.setViewName("redirect:main.do");	
 		}
 		else{
-			
+			mav.addObject("isLogin", false);
 			mav.setViewName("redirect:loginForm.do");
 		}
 		
