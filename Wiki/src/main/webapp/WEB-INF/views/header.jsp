@@ -51,7 +51,9 @@
 <div id="container">
 
 <div id="header">
-			<h1> Wiki Project </h1>
+		<div class="container">
+		<a href="main.do"><h1>Wiki Project</h1></a>
+		</div>
 			<form name="loginForm" >
 				<input class="loginbutton" type="button" value="Login" onclick="javascript:sendForm(1)"/>&nbsp;&nbsp;
 				<input class="loginbutton" type="button" value="Join" onclick="javascript:sendForm(2)"/>
