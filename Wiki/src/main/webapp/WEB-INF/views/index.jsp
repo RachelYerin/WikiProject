@@ -25,7 +25,7 @@
 
 	<input type="button" value="Test" onclick="javascript:sendForm(5)">
 	<br>
-
+	<input type="text" maxlength="20" size="10" name="keyword"><br>
 	<input type="button" value="search" onclick="javascript:sendForm(6)">
 </div>
 
