@@ -30,7 +30,7 @@
 		}else if(pagenum == 4){
 			document.loginForm.action = "openContentWrite.do";
 		}else if(pagenum == 5){
-			document.loginForm.action = "fileUploadView.do";
+			document.loginForm.action = "mytest.do";
 		}else {
 			document.loginForm.action = "searchContents.do";
 		}

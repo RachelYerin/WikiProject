@@ -6,33 +6,7 @@
 <title>Team 2 : Wiki Project</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<style>
-#title {
-	text-align: center;
-	font-size: 30pt;
-}
-
-table {
-	margin: auto;
-	border: 2px black solid;
-	border-collapse: collapse;
-}
-
-table td,th {
-	font-size: 13pt;
-	padding: 10px;
-}
-
-table th {
-	text-align: center;
-}
-
-span {
-	background-color: Black;
-	color: white;
-	font-size: 17pt;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="resources/css/yeonheestyle.css" />
 </head>
 <body>
 	<jsp:include page="index.jsp" flush="true" />
@@ -73,13 +47,13 @@ span {
 		</tbody>
 	</table>
 
+	<form class="form-horizontal" method="post"
+		action="openContentDetail.do" id="contentDetail">
+		<input type="hidden" name="idx" id="idx" value="" />
+	</form>
+
 	<br></br>
 	<a href="/wiki/openContentWrite.do" class="btn" id="write"><span>&nbsp;&nbsp;&nbsp;Write&nbsp;&nbsp;&nbsp;</span></a>
-	<br></br>
-	<form class="form-horizontal" method="post"
-		action="searchContents.do" id="searchForm">
-		<input type="text" maxlength="20" size="10" name="keyword">
-		<input class="submit" type="submit" value="Search" />
-	</form>
+	<!-- <a href="/wiki/openContentWrite.do" class="btn" id="write"><button>Write</button></a> -->
 </body>
 </html>

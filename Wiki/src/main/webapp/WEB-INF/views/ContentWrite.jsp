@@ -9,31 +9,35 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp" flush="true"/>
-    <form id="writeform" name="writeform" method="post" action="registerContent.do" >
-        <table class="board_view">
-            <colgroup>
-                <col width="15%">
-                <col width="*"/>
-            </colgroup>
-            <caption>게시글 작성</caption>
-            <tbody>
-                <tr>
-                    <th scope="row">제목</th>
-                    <td><input id="title" name="title" maxlength="100" required="required" type="text" class="wdp_90"></input></td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="view_text">
-                        <textarea rows="20" cols="100" title="내용" id="desc" name="desc" required="required" ></textarea>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br/><br/>  
-		<input class="submit" type="submit" value="Write" />
-        <a href="/wiki/contentsListView.do" class="btn" id="list" >List</a>
-       	
-    </form>
+	<jsp:include page="index.jsp" flush="true" />
+	<form id="writeform" name="writeform" method="post"
+		action="registerContent.do">
+		<h1 id="title">게시글 작성</h1>
+		<br>
+		<br>
+		<table class="board_view">
+			<colgroup>
+				<col width="15%">
+				<col width="*" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">제목</th>
+					<td><input id="title" name="title" maxlength="100"
+						required="required" type="text" class="wdp_90"></input></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="view_text"><textarea rows="15"
+							cols="100" title="내용" id="desc" name="desc" required="required"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="file" name="file" id="file"> <br />
+		<br /> <input type="submit" class="submit" value="Write" /> <a
+			href="/wiki/contentsListView.do" class="btn" id="list"><span>&nbsp;&nbsp;&nbsp;List&nbsp;&nbsp;&nbsp;</span></a>
+
+	</form>
 
 </body>
 
