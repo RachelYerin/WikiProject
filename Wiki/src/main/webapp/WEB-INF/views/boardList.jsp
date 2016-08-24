@@ -5,9 +5,16 @@
 <title>Team 2 : Wiki Project</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<style>
+#title {text-align:center; font-size:30pt;}
+table {margin:auto; border:2px black solid; border-collapse:collapse;}
+table td, th {font-size:13pt; padding:10px;}
+table th {text-align:center;}
+span {background-color:Black; color:white; font-size:17pt;}
+</style>
 </head>
 <body>
-<jsp:include page="header.jsp" flush="true"/>
+<jsp:include page="index.jsp" flush="true"/>
 <h2>게시판 목록</h2>
 <table style="border:1px solid #ccc">
     <colgroup>
@@ -30,7 +37,7 @@
                 <c:forEach items="${list}" var="contents">
                     <tr>
                         <td>${contents.idx }</td>
-                        <td><a href="openContentDetail.do?idx=${contents.idx}">${contents.title }</a></td>
+                        <td><a href="openContentDetail.do?idx=${contents.idx}">${contents.title}</a></td>
                         <td>${contents.filename }</td>
                         <td>${contents.reg_email }</td>
                     </tr>
@@ -50,6 +57,6 @@
 </form>
 
 <br></br>
- <a href="/wiki/openContentWrite.do" class="btn" id="write" >Write</a>
+<a href="/wiki/openContentWrite.do" class="btn" id="write"><span>&nbsp;&nbsp;&nbsp;Write&nbsp;&nbsp;&nbsp;</span></a> <a href="/wiki/openContentWrite.do" class="btn" id="write"><button>Write</button></a>
 </body>
 </html>

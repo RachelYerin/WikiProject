@@ -2,24 +2,16 @@ package com.team2.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.team2.database.MemberInfoObject;
 import com.team2.implement.MemberServiceImpl;
 
@@ -50,7 +42,7 @@ public class JoinController {
       List<MemberInfoObject> alllist = service.searchMemberByEmail(request.getParameter("id"));
       
       if(alllist.size() > 0){
-          response.setCharacterEncoding("EUC-KR");
+          response.setCharacterEncoding("EUC-KR"); /* UTF-8로 할 경우 깨져서 보임*/
            PrintWriter writer;
            try {
             writer = response.getWriter();
@@ -65,7 +57,7 @@ public class JoinController {
            }
       }
       else{
-         response.setCharacterEncoding("EUC-KR");
+         response.setCharacterEncoding("EUC-KR"); /* UTF-8로 할 경우 깨져서 보임*/
            PrintWriter writer;
            try {
             writer = response.getWriter();
@@ -98,16 +90,17 @@ public class JoinController {
       service.insertMember(newmember);
       
       mav.addObject("newmember", newmember);
-      response.setCharacterEncoding("UTF-8");
+      response.setCharacterEncoding("EUC-KR"); /* UTF-8로 할 경우 깨져서 보임*/
         PrintWriter writer;
         try {
          writer = response.getWriter();
          writer.println("<script type='text/javascript'>");
           writer.println("alert('회원가입 성공! 축하합니다.');");
-          //writer.println("self.close();");
+          //writer.println("location.replace('loginForm.jsp');");
+          writer.println("self.location.replace('loginForm.do');");
           writer.println("</script>");
           writer.flush();
-          mav.setViewName("redirect:/");
+          mav.setViewName("loginForm.do");
         } catch (IOException e) {
          // TODO Auto-generated catch block
          e.printStackTrace();

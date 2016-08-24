@@ -11,21 +11,21 @@
 	<meta name="author" content="Codrops" />
 	
 	<title>Team 2 : Wiki Project</title>
+
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"/>
 
-<div id="sideinfo">
-	<p> 글 목록 조회 </p>
+
 	<input type="button" value="ListView" onclick="javascript:sendForm(3)">
 	<br>
-	<p> 글 등록 </p>
+
 	<input type="button" value="ContentWrite" onclick="javascript:sendForm(4)">
 	<br>
-	<p> 파일 등록 </p>
+
 	<input type="button" value="Test" onclick="javascript:sendForm(5)">
 	<br>
-	<p> 글 검색 테스트 </p>
+
 	<input type="button" value="search" onclick="javascript:sendForm(6)">
 </div>
 

@@ -35,7 +35,8 @@ public class ContentController {
 		
 		List<ContentInfoObject> contentList = service.getBoardList();
 		mav.addObject("list", contentList);
-		mav.setViewName("boardList");
+		//mav.setViewName("boardList");/////////////////////////////////////////////////test
+		mav.setViewName("boardList_test");
 		
 		return mav;
 	}
@@ -44,7 +45,8 @@ public class ContentController {
 	public ModelAndView openContentWrite() throws Exception{
 		logger.info("openContentWrite()");
 		
-		ModelAndView mav = new ModelAndView("ContentWrite");
+		//ModelAndView mav = new ModelAndView("ContentWrite");
+		ModelAndView mav = new ModelAndView("ContentWrite_test");////////////////////////////////////////test
 		
 		return mav;
 	}

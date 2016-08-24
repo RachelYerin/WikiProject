@@ -42,8 +42,8 @@
 	.loginbutton {float:right;}
 	#container  { margin:auto; padding:10px; }
 	#header   {height:100px; }
-	#content  {float:left; width:660px; height:400px; }
-	#sideinfo  {float:right; width:300px; height:400px; }
+	#content  {float:right; width:660px; height:400px; }
+	#sideinfo  {float:left; width:300px; height:400px; }
 	#footer   {clear:both; height:50px; }
 	h1 {font-size:50pt; text-align:center;}
 	</style>

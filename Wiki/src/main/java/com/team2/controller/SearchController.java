@@ -28,7 +28,7 @@ public class SearchController {
 
 	
 	@RequestMapping("search.do")
-	public ContentInfoObject search( Map<String, Object> map ) throws Exception{
+	public ContentInfoObject search(String keyword) throws Exception{
 		logger.info("search()");
 		
 		ModelAndView mav = new ModelAndView("search");
