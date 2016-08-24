@@ -30,9 +30,6 @@ public class MemberController {
 		
 		//view 화면에 DB로부터 읽어온 데이터를 보여줌
 		ModelAndView mav = new ModelAndView();
-		//addObject view에 넘어가는 데이터??
-
-		System.out.println("ok**************************************************");
 		
 		List<MemberInfoObject> memberList = service.getMembers();
 		

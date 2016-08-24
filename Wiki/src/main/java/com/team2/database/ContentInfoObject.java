@@ -6,6 +6,7 @@ public class ContentInfoObject {
 	private String title;
 	private String desc;
 	private String filename;
+	private String filepath;
 	private String del_yn;
 	private String reg_date;
 	private String upd_date;
@@ -44,6 +45,14 @@ public class ContentInfoObject {
 	
 	public void setFilename(String filename){
 		this.filename = filename;
+	}
+	
+	public String getFilepath() {
+		return filepath;
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
 	}
 	
 	public String getDel_YN() {

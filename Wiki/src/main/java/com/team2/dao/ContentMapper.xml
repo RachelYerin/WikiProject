@@ -10,6 +10,7 @@
         <result property="title" column="TITLE"/>
         <result property="desc" column="CONTENTS"/>
         <result property="filename" column="FILENAME"/>
+        <result property="filepath" column="FILEPATH"/>
         <result property="del_yn" column="DEL_YN"/>
         <result property="reg_date" column="REG_DATE"/>
         <result property="upd_date" column="UPD_DATE"/>
@@ -17,18 +18,18 @@
         <result property="is_modifying" column="IS_MODIFYING"/>
     </resultMap>
  
-    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
     <select id="getBoardList" resultMap="ContentResultMap">
         SELECT * FROM CONTENTS_INFO
     </select>
 
-    <!-- Contents Info 테이블에 추가  -->
+    <!-- Contents Info 테이블에 추가 (예린)  -->
     <insert id="insertContent" parameterType="hashmap" >
         INSERT INTO CONTENTS_INFO 
-        	(IDX, TITLE, CONTENTS, FILENAME, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL, IS_MODIFYING)
+        	(IDX, TITLE, CONTENTS, FILENAME, FILEPATH, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL, IS_MODIFYING)
         VALUES(content_cnt_seq.nextval,
         	   #{title},
         	   #{desc},
+        	   'filename',
         	   'wiki/file/src/'||'F_'||content_cnt_seq.nextval,
         	   'N',
         	   SYSDATE,
@@ -37,7 +38,7 @@
         	   'N')
     </insert>
     
-    <!-- update와 delete는 생략한다. -->
+    <!-- 게시물 수정 (예린)  -->
     <update id="updateContent" parameterType="hashmap" >
     	UPDATE CONTENTS_INFO 
 			SET title = #{title}, 
@@ -48,6 +49,7 @@
 		  WHERE idx = #{idx}
     </update>
     
+    <!-- 게시물 삭제 (예린)  -->
     <delete id="deleteContent" parameterType="com.team2.database.ContentInfoObject" >
         DELETE FROM CONTENTS_INFO WHERE(idx = #{idx}) AND (reg_email = #{reg_email}) AND (is_modifying = 'N')
     </delete>

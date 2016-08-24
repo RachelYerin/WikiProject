@@ -21,6 +21,7 @@ public class ContentServiceImpl implements ContentService{
 	private SqlSession sqlSession;
 
 
+	// 모든 게시물을 받아와 Array
 	@Override
 	public ArrayList<ContentInfoObject> getBoardList()
 			throws Exception {
@@ -77,15 +78,18 @@ public class ContentServiceImpl implements ContentService{
 	public ContentInfoObject modifyAndUpdateContent(String idx, String title, String desc, String reg_email) throws Exception {
 		
 		ContentInfoObject content = new ContentInfoObject();
-		System.out.println("["+idx+"]"+"["+title+"]"+"["+desc+"]"+"["+reg_email+"]");
+		
 		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		
 		HashMap<String, String> map = new HashMap<String,String>();
 		map.put("idx", idx);
 		map.put("title",title);
 		map.put("desc",desc);
 		map.put("reg_email",reg_email);
-		contentMapper.updateContent(map);
+		
+		contentMapper.updateContent(map); 
 		content = contentMapper.searchContentByIdx(idx);
+		
 		return content;
 	}
 

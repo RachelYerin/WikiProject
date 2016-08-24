@@ -1,83 +1,44 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="com.team2.database.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-<%@ include file="/WEB-INF/include/include-header.jspf" %>
-<script type="text/javascript">
-function filego(pagenum){
-	if(pagenum == 1){
-		document.fileform.action = "fileupload.do";
-	}else{
-	}
-	
-	document.fileform.submit();
-}
-
-</script>
+	<title>Team 2 : Wiki Project</title>
 </head>
-<!-- <form method="post" enctype="multipart/form-data" action="">
-<input type="file" name="filename1" size=40>
-<input type="submit" value="¾÷·Îµå"><br><br>
-</form> -->
-
-
 
 <body>
 <jsp:include page="header.jsp" flush="true"/>
-    <form id="frm" name="frm" enctype="multipart/form-data">
+    <form id="FileSendForm" name="FileSendForm" method="post" action="registerContentAndFile.do" enctype="multipart/form-data">
         <table class="board_view">
             <colgroup>
                 <col width="15%">
                 <col width="*"/>
             </colgroup>
-            <caption>°Ô½Ã±Û ÀÛ¼º</caption>
+            <caption>ê²Œì‹œê¸€ ìž‘ì„±</caption>
             <tbody>
                 <tr>
-                    <th scope="row">Á¦¸ñ</th>
-                    <td><input type="text" id="TITLE" name="TITLE" class="wdp_90"></input></td>
+                    <th scope="row">ì œëª©</th>
+                    <td><input id="title" name="title" maxlength="100" required="required" type="text" class="wdp_90"></input></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="view_text">
-                        <textarea rows="20" cols="100" title="³»¿ë" id="CONTENTS" name="CONTENTS"></textarea>
+                        <textarea rows="20" cols="100" title="ë‚´ìš©" id="desc" name="desc" required="required" ></textarea>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <input type="file" name="file">
         <br/><br/>
-         
-        <a href="#this" class="btn" id="write">ÀÛ¼ºÇÏ±â</a>
-        <a href="#this" class="btn" id="list">¸ñ·ÏÀ¸·Î</a>
+        <input type="file" id="file" name="file">
+        <br/><br/>
+        <br/><br/>  
+		<input class="submit" type="submit" value="Write" />
+		<input class="button" type="button" value="List" href="/wiki/contentsListView.do" />
+        <a href="/wiki/contentsListView.do" class="btn" id="list" >List</a>
+       	
     </form>
-     
-    
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#list").on("click", function(e){ //¸ñ·ÏÀ¸·Î ¹öÆ°
-                e.preventDefault();
-                fn_openBoardList();
-            });
-             
-            $("#write").on("click", function(e){ //ÀÛ¼ºÇÏ±â ¹öÆ°
-                e.preventDefault();
-                fn_insertBoard();
-            });
-        });
-         
-        function fn_openBoardList(){
-            var comSubmit = new ComSubmit();
-            comSubmit.setUrl("<c:url value='/sample/openBoardList.do' />");
-            comSubmit.submit();
-        }
-         
-        function fn_insertBoard(){
-            var comSubmit = new ComSubmit("frm");
-            comSubmit.setUrl("<c:url value='/sample/insertfile.do' />");
-            comSubmit.submit();
-        }
-    </script>
+
 </body>
+
 </html>

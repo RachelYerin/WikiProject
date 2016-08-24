@@ -12,12 +12,12 @@
         <result property="email" column="EMAIL"/>
     </resultMap>
  
-    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. -->
+    <!-- 모든 유저 받아옴 (예린)  -->
     <select id="getMembers" resultMap="MemberResultMap">
         SELECT * FROM user_info
     </select>
 
-    <!-- parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다  --><!-- 회원가입 회원추가 기능 -->
+    <!-- 유저 추가 (연희)  -->
     <insert id="insertMember" parameterType="com.team2.database.MemberInfoObject" >
         INSERT INTO user_info VALUES(user_cnt_seq.nextval,#{username, jdbcType=VARCHAR},#{pw, jdbcType=VARCHAR},#{email, jdbcType=VARCHAR})
     </insert>
@@ -29,12 +29,13 @@
         DELETE user_info WHERE(username=#{username})
     </delete>
     
+    <!-- 로그인 (예린)  -->
     <select id="loginMember" parameterType="hashmap" resultMap="MemberResultMap">
     	select * from user_info
 		where email = #{email} and pw = #{pw}
     </select>
     
-    <!-- id의 경우에는 Mapper.java에 동일하게 사용해야된다. 회원가입을 위해 해당 아이디가 있는지 검색해본다. 회원가입시 중복을 체크하기 위해 생성 - 연희 --><!-- 회원가입 중복체크를 위한 구문 -->
+    <!-- 메일로 사용자 찾기 (연희)  -->
     <select id="searchMemberByEmail" parameterType="com.team2.database.MemberInfoObject" resultMap="MemberResultMap">
        SELECT * FROM user_info WHERE(email=#{email, jdbcType=VARCHAR})
     </select>

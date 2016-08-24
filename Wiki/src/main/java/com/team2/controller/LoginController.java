@@ -27,6 +27,7 @@ public class LoginController {
 	private MemberServiceImpl service;
 	private MemberInfoObject memberObject = null;
 	
+	//로그인 화면으로 리턴
 	@RequestMapping("loginForm.do")
 	public String loginForm(){
 		logger.info("loginForm()");
@@ -34,6 +35,7 @@ public class LoginController {
 		return "loginForm";
 	}
 	
+	//로그인 시도. 받아온 email과 pw로 서버에 해당 객체가 있는지 확인. 있다면 session에 email저장 없다면 실패 페이지로 리턴 (예린)
 	@RequestMapping("login.do")
 	public ModelAndView login(HttpSession session, String email, String pw) {
 		logger.info("login()");
@@ -53,6 +55,7 @@ public class LoginController {
 		return mav;
 	}
 	
+	// index가 나오는 메인 페이지 (예린)
 	@RequestMapping("main.do")
 	public String main(Model model, HttpSession session){
 		//String username = (String) session.getAttribute("username");
@@ -63,6 +66,7 @@ public class LoginController {
             return "index";
     }
 
+	// 로그인 실패시 나오는 페이지로 리턴 
 	@RequestMapping("loginFailure.do")
 	public String loginFailure(ModelAndView mav) {
 		logger.info("loginFailure()");
