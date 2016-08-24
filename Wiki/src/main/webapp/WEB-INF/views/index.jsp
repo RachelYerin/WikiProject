@@ -29,13 +29,6 @@
 	<input type="button" value="search" onclick="javascript:sendForm(6)">
 </div>
 
-<div id="content">
-
-
-</div>
-
-<div id="footer"><jsp:include page="footer.jsp" flush="true"/></div>
-</div>
 </body>
 </html>
 
