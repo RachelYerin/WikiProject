@@ -44,50 +44,12 @@
 							<input class="submit" type="submit" value="Login" />
 						</p>
 						<p class="change_link">
-							Not a member yet ? <a href="#toregister" class="to_register">Join us</a>
+							Not a member yet ? <a href="joinForm.do">Join us</a>
 						</p>
 					</form>
 
 				</div>
-				<div id="register" class="animate form">
-					<form name="join_form" action="joinProcess" method="post" onSubmit="return checkAll(this);">
-						<h1>Sign up</h1>
-						<p>
-							<label for="usernamesignup" class="uname" data-icon="u">Your
-								username</label> 
-								<input id="usernamesignup" maxlength="30" size="20" name="name" required="required" type="text"
-								placeholder="mysuperusername690" />
-							<input type="button" onclick="chk_name()" id="name_chk" value="double check"/>
-						</p>
-						<p>
-							<label for="emailsignup" class="youmail" data-icon="e">
-								Your email</label> <input id="emailsignup" maxlength="30" size="30"
-								name="id" required="required" type="email"
-								placeholder="mysupermail@mail.com" />
-							<input type="button" onclick="chk_id()" id="id_chk" value="double check"/>
-						</p>
-						<p>
-							<label for="passwordsignup" class="youpasswd" data-icon="p">Your
-								password </label> <input id="passwordsignup" maxlength="30" size="20"
-								name="pw" required="required" type="password"
-								placeholder="eg. X8df!90EO" />
-						</p>
-						<p>
-							<label for="passwordsignup_confirm" class="youpasswd"
-								data-icon="p">Please confirm your password </label> <input
-								id="passwordsignup_confirm" maxlength="30" size="20"
-								name="pw_check" required="required"
-								type="password" placeholder="eg. X8df!90EO" />
-						</p>
-						<p class="signin button">
-							<input type="submit" value="Sign up" />
-						</p>
-						<p class="change_link">
-							Already a member ? <a href="#tologin" class="to_register">
-								Go and log in </a>
-						</p>
-					</form>
-				</div>
+		
 			</div>
 		</div>
 	</section>
