@@ -46,8 +46,8 @@ public class LoginController {
 			mav.setViewName("redirect:main.do");	
 		}
 		else{
-			mav.addObject("isLogin", false);
-			mav.setViewName("redirect:loginForm.do");
+			//mav.addObject("isLogin", false);
+			mav.setViewName("redirect:/loginFailure.do");
 		}
 		
 		return mav;
@@ -63,6 +63,13 @@ public class LoginController {
             return "index";
     }
 
+	@RequestMapping("loginFailure.do")
+	public String loginFailure(ModelAndView mav) {
+		logger.info("loginFailure()");
+		System.out.println("call: login failure");
+		
+		return "loginFailure";
+	}
 }
 
 	/*@RequestMapping("selectItem.do")

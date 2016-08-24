@@ -6,59 +6,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Team 2 : Wiki Project</title>
 
-<meta charset="UTF-8" />
+<!-- <meta charset="UTF-8" /> -->
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Wiki Project" />
-<meta name="keywords"
-	content="menu, navigation, animation, transition, transform, rotate, css3, web design, component, icon, slide" />
-<meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/style10.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
 <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
 <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
-
-<!-- <script type="text/javascript">
-function loginProcess(){
-	
-	alert('test');
-	document.login_form.action = "login.do";
-	document.login_form.submit();
-}
-</script> -->
 
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"/>
-	<!-- <form action="login.do">
-		<table>
-			<tr>
-				<td width="150px" align="center">EMAIL :</td>
-				<td width="150px" align="center">
-					<input type="text" name="email">
-				</td>
-			</tr>
-			<tr>
-				<td width="150px" align="center">PW :</td>
-				<td width="150px" align="center">
-					<input type="password" name="pw">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center">
-					<input type="submit" value="login">
-				</td>
-			</tr>
-		</table>
-	
-	</form> -->
-
 <div class="login-form">
 	<section>
 		<div id="login_demo">
-			<!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4 -->
 
 			<a class="hiddenanchor" id="toregister"></a> 
 			<a class="hiddenanchor"	id="tologin"></a>
