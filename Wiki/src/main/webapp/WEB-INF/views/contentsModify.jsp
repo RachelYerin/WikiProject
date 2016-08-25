@@ -10,36 +10,35 @@
 </head>
 
 <body>
-	<jsp:include page="index.jsp" flush="true" />
-	<h1 id="title">게시글 수정</h1>
-	<form id="ModifyForm" name="modifyform" method="post"
-		action="updateContent.do">
-		<table class="board_view" border="1">
+	<jsp:include page="header.jsp" flush="true" />
+	<form id="ModifyForm" name="modifyform" method="post" action="updateContent.do">
+		<table class="board_view">
 			<colgroup>
-				<col width="15%">
-				<col width="*" />
+				<col width="10%"/>
+				<col width="90%"/>
 			</colgroup>
-
 			<tbody>
 				<tr>
-					<th scope="row">제목</th>
-					<td><input id="title" name="title" maxlength="100"
-						required="required" type="text" class="wdp_90"
-						value="${content.title}"></input></td>
+					<td style="text-align:center">제목</td>
+					<td>
+					<input id="title" name="title" maxlength="100" required="required" type="text" class="wdp_90" style="width:600px" value="${content.title}"></input>
+					</td>
 				</tr>
 				<tr>
-					<td colspan="2" class="view_text"><textarea rows="20"
-							cols="100" title="내용" id="desc" name="desc" required="required">${content.desc}</textarea>
+					<td colspan="2" class="view_text">
+					<textarea rows="20"	cols="100" title="내용" id="desc" name="desc" required="required">${content.desc}</textarea>
 					</td>
+				</tr>
+				<tr><td colspan="2">
+				<input type="hidden" id="idx" name="idx" value="${content.idx}"></input>
+				<input class="btn" type="submit" value="Modify(수정)"/>
+				<a href="/wiki/contentsListView.do" class="btn" id="list"><span>&nbsp;&nbsp;&nbsp;List(목록)&nbsp;&nbsp;&nbsp;</span></a>
+				</td>
 				</tr>
 			</tbody>
 		</table>
-		<input type="hidden" id="idx" name="idx" value="${content.idx}"></input>
-		<input class="submit" type="submit" value="Modify" /> <a
-			href="/wiki/contentsListView.do" class="btn" id="list">List</a>
-
+	
 	</form>
-
 </body>
 
 </html>
