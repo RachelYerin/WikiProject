@@ -48,7 +48,7 @@ public class ContentController {
 	public ModelAndView openContentWrite() throws Exception{
 		logger.info("openContentWrite()");
 		
-		ModelAndView mav = new ModelAndView("ContentWrite");
+		ModelAndView mav = new ModelAndView("contentWrite");
 		
 		return mav;
 	}
