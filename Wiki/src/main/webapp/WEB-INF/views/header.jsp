@@ -99,8 +99,7 @@
 				<td><br>
 					<form class="form-horizontal" method="post"
 						action="searchContents.do" id="searchForm">
-						<input type="text" maxlength="20" size="10" name="keyword"><br>
-						<!-- <input type="button" value="Search" onClick="javascript:check()">  -->
+						<input type="text" maxlength="20" size="10" name="keyword" required="required"><br>
 						<input class="submit" type="submit" value="Search" />
 					</form></td>
 			</tr>

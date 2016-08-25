@@ -58,10 +58,18 @@ public class ContentController {
 	public ModelAndView registerContent(HttpSession session, String title, String desc) throws Exception{
 		logger.info("registerContent()");
 		
-		String useremail = (String) session.getAttribute("userEmail");
+		String userEmail = (String) session.getAttribute("userEmail");
+		ModelAndView mav = new ModelAndView();
 		
-		service.registerContent(title, desc, useremail);
-		ModelAndView mav = new ModelAndView("redirect:/contentsListView.do");
+		if( userEmail == null ){
+			String failDesc = "<span> 로그인이 필요합니다.</span><span>클릭하시면 리스트로 이동합니다.</span>";
+			mav.setViewName("failurePage");
+			mav.addObject("FailureType", failDesc);
+			return mav;
+		}
+		
+		service.registerContent(title, desc, userEmail);
+		mav.setViewName("redirect:/contentsListView.do");
 		
 		return mav;
 	}
