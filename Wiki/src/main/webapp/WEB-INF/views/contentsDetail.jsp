@@ -8,7 +8,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp" flush="true"/>
-<h1 id="title" align="left">게시글 상세</h1> <br></br>
     <table class="board_view" border="1" width="70%">
         <colgroup>
             <col width="15%"/>
@@ -18,23 +17,20 @@
         </colgroup>
         <tbody>
             <tr>
-                <th scope="row">글 번호</th>
-                <td>${content.idx}</td>
-                <th scope="row">등록일</th>
-                <td>${content.reg_date}</td>
+            <td rowspan="3">${content.title}</td>
+            <td>등록일</td>
+            <td>${content.reg_date}</td>
             </tr>
             <tr>
-                <th scope="row">작성자</th>
-                <td>${content.reg_email}</td>
-                <th scope="row">수정일</th>
-                <td>${content.upd_date}</td>
+            <td>수정일</td>
+            <td>${content.upd_date}</td>
             </tr>
             <tr>
-                <th scope="row"> <h2>제목</h2> </th>
-                <td colspan="3">${content.title}</td>
+            <td>작성자</td>
+            <td>${content.reg_email}</td>
             </tr>
             <tr>
-                <td colspan="4">${content.desc}</td>
+                <td colspan="3">${content.desc}</td>
             </tr>
         </tbody>
     </table>

@@ -73,17 +73,29 @@
 
 
 	<div id="sideinfo">
-		<input type="button" value="ListView" onclick="javascript:sendForm(3)">
+	<table>
+	<tr><td><br>
+		<input type="button" value="ListView" onclick="javascript:sendForm(3)"><br>
+		</td></tr>
+	<tr><td>
 		<br> <input type="button" value="ContentWrite"
-			onclick="javascript:sendForm(4)"> <br> <input
+			onclick="javascript:sendForm(4)"> <br>
+			</td></tr>
+		<tr><td><br> <input
 			type="button" value="Test" onclick="javascript:sendForm(5)">
-		<br>
+		<br></td></tr>
+		<tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr><td><br>
 		<form class="form-horizontal" method="post" action="searchContents.do"
 			id="searchForm">
-			<input type="text" maxlength="20" size="10" name="keyword">
+			<input type="text" maxlength="20" size="10" name="keyword"><br>
 			<!-- <input type="button" value="Search" onClick="javascript:check()">  -->
 			<input class="submit" type="submit" value="Search" />
 		</form>
+	</td></tr>
+	</table>
 	</div>
 
 </body>
