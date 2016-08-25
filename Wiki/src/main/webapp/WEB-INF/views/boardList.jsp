@@ -9,8 +9,9 @@
 <link rel="stylesheet" type="text/css" href="resources/css/yeonheestyle.css" />
 </head>
 <body>
-	<jsp:include page="index.jsp" flush="true" />
-	<h2>게시판 목록</h2>
+	<jsp:include page="header.jsp" flush="true" />
+	<h1>게시판 목록</h1>
+	<br><br>
 	<table style="border: 1px solid #ccc">
 		<colgroup>
 			<col width="10%" />

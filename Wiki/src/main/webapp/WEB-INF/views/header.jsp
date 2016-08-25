@@ -25,7 +25,7 @@
 			document.loginForm.action = "loginForm.do";
 		}else if(pagenum == 2){
 			document.loginForm.action = "joinForm.do";
-		}else if(pagenum == 3){
+		}else if(pagenum ==3){
 			document.loginForm.action = "contentsListView.do";
 		}else if(pagenum == 4){
 			document.loginForm.action = "openContentWrite.do";
@@ -48,21 +48,10 @@
 		}
 		document.searchForm.submit();
 	}
-	</script>
-	<style>
-	.loginbutton {float:right;}
-	#container  { margin:auto; padding:10px; }
-	#header   {height:100px; }
-	#content  {float:right; width:660px; height:400px; }
-	#sideinfo  {float:left; width:300px; height:400px; }
-	#footer   {clear:both; height:50px; }
-	h1 {font-size:50pt; text-align:center;}
-	</style>
+</script>
 </head>
 
 <body id="body">
-<div id="container">
-
 <div id="header">
 		<div class="container">
 		<a href="main.do"><h1>Wiki Project</h1></a>
@@ -73,7 +62,21 @@
 				<input class="logoutbutton" type="button" value="Logout" onclick="javascript:sendForm(8)"/>
 			</form>
 </div>
+
+
 <hr>
-	
+
+
+	<div id="sideinfo">
+		<input type="button" value="ListView" onclick="javascript:sendForm(3)"> <br>
+		<input type="button" value="ContentWrite" onclick="javascript:sendForm(4)"> <br> 
+		<input type="button" value="Test" onclick="javascript:sendForm(5)"> <br> 
+		<form class="form-horizontal" method="post" action="searchContents.do" id="searchForm">
+			<input type="text" maxlength="20" size="10" name="keyword"> 
+			<!-- <input type="button" value="Search" onClick="javascript:check()">  -->
+			<input class="submit" type="submit" value="Search" />
+		</form>
+	</div>
+
 </body>
 </html>
