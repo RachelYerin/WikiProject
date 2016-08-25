@@ -7,8 +7,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 </head>
 <body>
-<jsp:include page="index.jsp" flush="true"/>
-<h1 id="title">게시글 상세</h1> <br></br>
+<jsp:include page="header.jsp" flush="true"/>
+<h1 id="title" align="left">게시글 상세</h1> <br></br>
     <table class="board_view" border="1" width="70%">
         <colgroup>
             <col width="15%"/>
@@ -30,7 +30,7 @@
                 <td>${content.upd_date}</td>
             </tr>
             <tr>
-                <th scope="row">제목</th>
+                <th scope="row"> <h2>제목</h2> </th>
                 <td colspan="3">${content.title}</td>
             </tr>
             <tr>

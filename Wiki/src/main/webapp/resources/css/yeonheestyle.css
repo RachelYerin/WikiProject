@@ -25,7 +25,7 @@ table th {
 	float:right;
 }
 span {
-	background-color: Black;
+	background-color: #333;
 	color: white;
 	font-size: 14pt;
 }
@@ -34,9 +34,38 @@ body {
 	margin: auto;
 }
 
-.loginbutton {
-	float: right;
+
+.loginbutton, .joinbutton, .logoutbutton {
+    font-family: "Terminal Dosis", Arial, sans-serif;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 20px;
+    font-size: 12px;
 }
+
+
+
+/* .loginbutton {
+	background-color: white;
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin: auto;
+	align: right;
+	
+}
+
+.joinbutton {
+	background-color: white;
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin: auto;
+	align: right;
+	
+} */
 
 #container {
 	margin: auto;

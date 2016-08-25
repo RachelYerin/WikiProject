@@ -64,5 +64,29 @@
   		WHERE UPPER(TITLE) LIKE '%'||UPPER(#{keyword})||'%'
     </select>
     
+    <insert id="insertContentAndFile" parameterType="hashmap" >
+        INSERT INTO CONTENTS_INFO 
+        	(IDX, TITLE, CONTENTS, FILENAME, FILEPATH, DEL_YN, REG_DATE, UPD_DATE, REG_EMAIL, IS_MODIFYING)
+        VALUES(content_cnt_seq.nextval,
+        	   #{title},
+        	   #{desc},
+        	   #{filename},
+        	   #{filepath},
+        	   'N',
+        	   SYSDATE,
+        	   SYSDATE,
+        	   #{reg_email},
+        	   'N')
+    </insert>
+    
+    <select id="selectRandomContents" resultMap="ContentResultMap">
+       SELECT * 
+      		  FROM( SELECT *
+            	    FROM CONTENTS_INFO
+            	    WHERE 1=1
+           	 	    ORDER BY DBMS_RANDOM.RANDOM)
+     		  WHERE(ROWNUM=1)
+    </select>
+    
     
 </mapper>

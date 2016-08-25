@@ -18,6 +18,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
 	<link href='resources/css/design.css' rel='stylesheet' type='text/css' />
 	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/css/yeonheestyle.css" />
 
 	<script type="text/javascript">
 	function sendForm(pagenum){
@@ -52,27 +53,34 @@
 </head>
 
 <body id="body">
-<div id="header">
-		<div class="container">
-		<a href="main.do"><h1>Wiki Project</h1></a>
-		</div>
-			<form name="loginForm" >
-				<input class="loginbutton" type="button" value="Login" onclick="javascript:sendForm(1)"/>&nbsp;&nbsp;
-				<input class="joinbutton" type="button" value="Join" onclick="javascript:sendForm(2)"/>
-				<input class="logoutbutton" type="button" value="Logout" onclick="javascript:sendForm(8)"/>
-			</form>
-</div>
+	<div id="header" >
+		<form name="loginForm">
+			<div align="right">
+				<input class="loginbutton" type="button" value="LOGIN" onclick="javascript:sendForm(1)"> </input>
+				<input class="joinbutton" type="button" value="JOIN" onclick="javascript:sendForm(2)"> </input>
+				<input class="logoutbutton" type="button" value="LOGOUT" onclick="javascript:sendForm(8)" />
+			</div>
+			<div class="container">
+				<a href="main.do"><h1>Wiki Project</h1></a>
+			</div>
+		</form>
+		
+		
+	</div>
 
 
-<hr>
+	<hr>
 
 
 	<div id="sideinfo">
-		<input type="button" value="ListView" onclick="javascript:sendForm(3)"> <br>
-		<input type="button" value="ContentWrite" onclick="javascript:sendForm(4)"> <br> 
-		<input type="button" value="Test" onclick="javascript:sendForm(5)"> <br> 
-		<form class="form-horizontal" method="post" action="searchContents.do" id="searchForm">
-			<input type="text" maxlength="20" size="10" name="keyword"> 
+		<input type="button" value="ListView" onclick="javascript:sendForm(3)">
+		<br> <input type="button" value="ContentWrite"
+			onclick="javascript:sendForm(4)"> <br> <input
+			type="button" value="Test" onclick="javascript:sendForm(5)">
+		<br>
+		<form class="form-horizontal" method="post" action="searchContents.do"
+			id="searchForm">
+			<input type="text" maxlength="20" size="10" name="keyword">
 			<!-- <input type="button" value="Search" onClick="javascript:check()">  -->
 			<input class="submit" type="submit" value="Search" />
 		</form>

@@ -10,7 +10,7 @@
 
 <body>
 <jsp:include page="header.jsp" flush="true"/>
-    <form id="FileSendForm" name="FileSendForm" method="post" action="registerContentAndFile.do" enctype="multipart/form-data">
+    <form enctype="multipart/form-data" id="FileSendForm" name="FileSendForm" method="post" action="registerContentAndFile.do" >
         <table class="board_view">
             <colgroup>
                 <col width="15%">

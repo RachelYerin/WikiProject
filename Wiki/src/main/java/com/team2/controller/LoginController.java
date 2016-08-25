@@ -10,7 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.team2.database.ContentInfoObject;
 import com.team2.database.MemberInfoObject;
+import com.team2.implement.ContentServiceImpl;
 import com.team2.implement.MemberServiceImpl;
 
 @Controller
@@ -40,7 +42,7 @@ public class LoginController {
 		
 		if( memberObject != null ){
 			session.setAttribute("userEmail", email);
-			mav.setViewName("redirect:main.do");	
+			mav.setViewName("redirect:/main.do");	
 		}
 		else{
 			//mav.addObject("isLogin", false);
@@ -52,9 +54,16 @@ public class LoginController {
 	
 	// index가 나오는 메인 페이지 (예린)
 	@RequestMapping("main.do")
-	public String main(Model model, HttpSession session){
+	public ModelAndView main(Model model, HttpSession session){
 
-            return "index";
+		//ContentInfoObject content = new ContentInfoObject();
+		//ContentServiceImpl conService = new ContentServiceImpl(); 
+		//변수 선언 없이 그냥 퍼블릭 함수를 호출하고 싶었는데 그게 안됨. 왜 그런지 모르겠어 연희야 ㅠㅠ
+		//content = conService.selectRandomContents();
+		ModelAndView mav = new ModelAndView("index");
+		//mav.addObject("content", content);
+		
+		return mav;
     }
 
 	// 로그인 실패시 나오는 페이지로 리턴 

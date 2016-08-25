@@ -106,5 +106,37 @@ public class ContentServiceImpl implements ContentService{
 		
 		return content;
 	}
+
+
+	@Override
+	public boolean registerContentAndFile(String title, String desc, String filename, String reg_email) throws Exception {
+		
+		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+
+		HashMap<String, String> map = new HashMap<String,String>();
+		map.put("title",title);
+		map.put("desc",desc);
+		map.put("filename",desc);
+		map.put("filepath","c:/upload/wiki/"+filename);
+		map.put("reg_email",reg_email);
+		
+		try{
+			contentMapper.insertContentAndFile(map);
+		} catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+
+
+	@Override
+	public ContentInfoObject selectRandomContents() {
+		
+		ContentInfoObject content = new ContentInfoObject();
+		ContentMapper contentMapper = sqlSession.getMapper(ContentMapper.class);
+		content = contentMapper.selectRandomContents();
+		
+		return content;
+	}
 	
 }
