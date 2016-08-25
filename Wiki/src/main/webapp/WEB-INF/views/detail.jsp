@@ -1,3 +1,6 @@
+<!-- 랜덤으로 게시글 보여주기 테스트 구현 안됨 -->
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

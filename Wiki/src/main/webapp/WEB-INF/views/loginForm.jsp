@@ -25,7 +25,7 @@
 			<a class="hiddenanchor"	id="tologin"></a>
 			
 			<div id="wrapper">
-				<div id="login" class="animate form">
+				<div id="login" class="loginContainer">
 					<form name="login_form" method="post" action="login.do">
 						<h1>Log in</h1>
 						<p>

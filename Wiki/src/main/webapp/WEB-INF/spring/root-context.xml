@@ -45,12 +45,4 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
     
-    <!-- <bean name="memberDAOService" class="com.team2.service.MemberDAOService"/>
-     -->
-    
-   <!-- 
-	<bean id="memberDAOService" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-        <property name="mapperInterface" value="com.team2.service.MemberDAOService"></property>
-    </bean> -->
 </beans>

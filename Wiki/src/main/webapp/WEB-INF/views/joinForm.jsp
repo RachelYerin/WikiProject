@@ -26,7 +26,7 @@
 			<a class="hiddenanchor"	id="tologin"></a>
 			
 			<div id="wrapper">
-				<div id="login" class="animate form">
+				<div id="login" class="joinContainer">
 					<form name="login_form" method="post" action="join.do">
 						<h1>Sign up</h1>
 						<p>

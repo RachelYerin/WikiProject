@@ -1,3 +1,5 @@
+<!-- 파일과 함께 올리기 테스트 구현 안됨 -->
+
 <%@ page import="com.team2.database.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
